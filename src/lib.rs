@@ -1,7 +1,7 @@
 use serde_json::{Map, Number, Value, from_str};
 use wasm_bindgen::prelude::*;
 use integer_encoding::VarInt;
-use convert_case::{Case, Casing};
+// use convert_case::{Case, Casing};
 
 #[inline(always)]
 pub fn push_null(buf: &mut Vec<u8>) {
@@ -87,7 +87,7 @@ pub fn push_object(buf: &mut Vec<u8>, obj: Map<String, Value>) {
     buf.push(111);
     let mut written: u32 = 0;
     for (k, v) in obj {
-        push_string(buf, k.to_case(Case::Camel));
+        push_string(buf, k);
         push_value(buf, v);
         written += 1;
     }

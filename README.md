@@ -1,3 +1,5 @@
+Note: I'm no longer working on this project because WASM-based JSON deserialization came out to be lot slower.
+
 # serde_to_v8
 
 Converts serde_json `Value` to v8 binary format.
